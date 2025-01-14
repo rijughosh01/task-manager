@@ -18,11 +18,14 @@ CSS for styling
 ## **Installation**
 Clone the repository:
 git clone https://github.com/rijughosh01/task-manager
+
 cd task-manager
 Install dependencies:
 npm install
+
 Start the development server:
 npm start
+
 Open the app in your browser at http://localhost:3000.
 
 
@@ -35,6 +38,6 @@ Use the filter buttons to view All, Completed, or Pending tasks.
 
 ## **License**
 This project is licensed under the MIT License.
-Acknowledgements
 
+## **Acknowledgements**
 Built with ❤️ using React.
