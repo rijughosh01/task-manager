@@ -4,7 +4,13 @@ import "./App.css";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState({ title: "", description: "" });
+  const [newTask, setNewTask] = useState({
+    title: "",
+    description: "",
+    priority: "Low",
+    dueDate: "",
+    creationDate: new Date().toISOString().split("T")[0],
+  });
   const [filter, setFilter] = useState("All");
 
   const addTask = (e) => {
@@ -16,9 +22,12 @@ const App = () => {
       title: newTask.title,
       description: newTask.description,
       completed: false,
+      createdAt: new Date().toISOString(),
+      priority: newTask.priority || "Low",
+      dueDate: newTask.dueDate || "",
     };
     setTasks([...tasks, task]);
-    setNewTask({ title: "", description: "" });
+    setNewTask({ title: "", description: "", priority: "Low", dueDate: "" });
   };
 
   const toggleComplete = (taskId) => {
@@ -49,8 +58,9 @@ const App = () => {
   return (
     <div className="App">
       <h1>Task Manager</h1>
+
       {/* Add New Task Form */}
-      <form onSubmit={addTask}>
+      <form onSubmit={addTask} className="add-task-form">
         <input
           type="text"
           placeholder="Task Title"
@@ -63,6 +73,21 @@ const App = () => {
           onChange={(e) =>
             setNewTask({ ...newTask, description: e.target.value })
           }
+        />
+        <select
+          className="priority-dropdown"
+          value={newTask.priority}
+          onChange={(e) => setNewTask({ ...newTask, priority: e.target.value })}
+        >
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <label>Due Date:</label>
+        <input
+          type="date"
+          value={newTask.dueDate}
+          onChange={(e) => setNewTask({ ...newTask, dueDate: e.target.value })}
         />
         <button type="submit">Add Task</button>
       </form>
