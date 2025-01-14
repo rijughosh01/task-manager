@@ -1,8 +1,7 @@
-Task Manager App
-
+**Task Manager App**
 A simple and intuitive Task Manager App built with React for managing tasks effectively.
 
-Features
+**Features**
 
 Add Tasks: Create new tasks with a title and description.
 
@@ -14,13 +13,13 @@ Delete Tasks: Remove tasks from the list.
 
 Filter Tasks: View all, completed, or pending tasks.
 
-Technologies Used
+**Technologies Used**
 
 React (Frontend)
 
 CSS for styling
 
-Installation
+**Installation**
 
 Clone the repository:
 
@@ -37,7 +36,7 @@ npm start
 
 Open the app in your browser at http://localhost:3000.
 
-Usage
+**Usage**
 
 Enter a task title and description in the input fields.
 
@@ -47,7 +46,7 @@ Use the Complete, Edit, or Delete buttons for task management.
 
 Use the filter buttons to view All, Completed, or Pending tasks.
 
-License
+**License**
 
 This project is licensed under the MIT License.
 
